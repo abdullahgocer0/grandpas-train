@@ -60,7 +60,7 @@ footer a{color:var(--red);font-weight:600;text-decoration:none}
   <h1>Turn the tiles. Pull the cord. Off we go.</h1>
   <p class="lead">A cozy track-turning puzzle. Join the rails, light the line and bring Grandpa's little red train home, from the Alps to under the Bosphorus and across Japan.</p>
 
-  <a class="cta" id="cta" href="https://apps.apple.com/app/id6838847069">Get it free on the App Store</a>
+  <a class="cta" id="cta" href="https://apps.apple.com/app/apple-store/id6838847069?pt=127912654&amp;ct=ig-play&amp;mt=8">Get it free on the App Store</a>
 
   <ul class="etiket">
     <li>Free to play</li><li>No ads</li><li>4 lines · 36 stops</li><li>No account needed</li>
@@ -85,7 +85,7 @@ footer a{color:var(--red);font-weight:600;text-decoration:none}
   </footer>
 </main>
 
-<div class="yapiskan" id="yap"><a class="cta" href="https://apps.apple.com/app/id6838847069">Get it free on the App Store</a></div>
+<div class="yapiskan" id="yap"><a class="cta" href="https://apps.apple.com/app/apple-store/id6838847069?pt=127912654&amp;ct=ig-play&amp;mt=8">Get it free on the App Store</a></div>
 
 <script>
 (function(){
@@ -96,6 +96,8 @@ footer a{color:var(--red);font-weight:600;text-decoration:none}
     b.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on';
     b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off');
   });
+  try{var c=new URLSearchParams(location.search).get('c');
+    if(c&&/^[\w-]{1,40}$/.test(c)){document.querySelectorAll('a.cta').forEach(function(a){a.href=a.href.replace(/ct=[^&]*/,'ct='+c);});}}catch(e){}
   var cta=document.getElementById('cta'),yap=document.getElementById('yap');
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(e){yap.classList.toggle('acik',!e[0].isIntersecting);}).observe(cta);
